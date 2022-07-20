@@ -1,0 +1,15 @@
+{% extends "pages/base.html" %}
+
+{% block title %}Home{% endblock  %}
+
+{{% block content %}
+    <ul class="nav flex-column">
+        {% if listpj %}
+            {% for item in listpj %}
+                <ul><a href= {{ item.duong_dan }} >{{ item.id }}. {{ item.ten_pj }}</a></ul>
+            {% endfor %}
+        {% else %}
+            <h4 style: "color = red ;"> Khong co du lieu </h4>
+        {% endif %}
+    </ul>
+{% endblock  %}}
